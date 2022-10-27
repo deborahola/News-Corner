@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Corner - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="{{url_for('static', filename='css/style.css')}}" rel="stylesheet">
+  </head>
+   <body>
+     
+     <nav class="navbar navbar-expand-lg bg-light">
+       <div class="container-fluid">
+         <a class="navbar-brand" href="index">News Corner</a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+           <div class="navbar-nav">
+             <a class="nav-link" href="index">Home</a>
+             <a class="nav-link" href="results">Results</a>
+           </div>
+         </div>
+       </div>
+     </nav>
+
+     <br>
+
+     <div class="container">
+       
+       <h1>Search for News</h1>
+
+       <br>
+
+       <div class="flex-container">
+         <div class="flex-item">
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbYUmd4_uCyYodRgrwx5KTbmOdhLQwsbekjA&usqp=CAU" alt="news logo/icon">
+         </div>
+       </div>
+
+       <br>
+       
+       <form method="POST" action="/results">
+         <fieldset class="form-group">
+           <div class="form-group">
+             <label for="keyword">Search Term (Keyword):</label>
+             <input type="text" id="keyword" name="search_term">
+             <br><br>
+             <label for="category" class="form-label">Category for Search Term: Sports, Technology, Health, Business or Entertainment?</label>
+             <input type="text" class="form-control" id="category" name="search_category">
+           </div>
+         </fieldset>
+         <br>
+         <div class="form-group">
+           <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Search">
+        </div>
+       </form>
+       
+     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

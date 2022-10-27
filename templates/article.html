@@ -1,0 +1,34 @@
+<table class="table table-hover">
+    <tr>
+        <td width="70px">
+            <a href='{{ article["url"] }}' target="_blank">
+                {% if article["urlToImage"] %}
+                <img src='{{ article["urlToImage"] }}' class="format">
+                {% else %}
+                    {% if category == "technology" %}
+                    <img src='{{ default_images["technology"] }}' class="format">
+                    {% elif category == "business" %}
+                    <img src='{{ default_images["business"] }}' class="format">
+                    {% elif category == "entertainment" %}
+                    <img src='{{ default_images["entertainment"] }}' class="format">
+                    {% elif category == "health" %}
+                    <img src='{{ default_images["health"] }}' class="format">
+                    {% elif category == "sports" %}
+                    <img src='{{ default_images["sports"] }}' class="format">
+                    {% endif %}
+                {% endif %}
+            </a>
+        </td>
+        <td>
+            <a href='{{ article["url"] }}' target="_blank">
+                <h3><strong>{{ article["title"] }}</strong></h3>
+            </a>
+            <br>
+            {% if article["description"] %} {{ article["description"] }} {% endif %}
+            <br>
+            <br>
+            <h5>Source: {{ article["source"]["name"] }}</h5>
+            {{ article["publishedAt"] }}
+        </td>
+    </tr>
+</table>
